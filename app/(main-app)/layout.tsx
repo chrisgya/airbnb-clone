@@ -5,6 +5,7 @@ import SearchModal from "@/app/components/modals/SearchModal";
 import RentModal from "@/app/components/modals/RentModal";
 import getCurrentUser from "../utilities/currentUser";
 import AuthContext from "../context/AuthContext";
+import VideoModal from "../components/modals/VideoModal";
 
 export default async function MainAppLayout({
   children,
@@ -20,6 +21,7 @@ export default async function MainAppLayout({
         <RegisterModal />
         <SearchModal />
         <RentModal />
+        <VideoModal />
         <Navbar currentUser={currentUser} />
         <div className="pt-40 pb-24">{children}</div>
       </AuthContext>

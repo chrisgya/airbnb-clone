@@ -8,9 +8,9 @@ import Button from "../Button";
 type TModal = {
   isOpen?: boolean;
   onClose: () => void;
-  onSubmit: () => void;
+  onSubmit: () => void | Promise<void>;
   closeOnBackdropClick?: boolean;
-  title?: string;
+  title: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
   actionLabel: string;
@@ -48,12 +48,12 @@ const Modal = ({
     onClose();
   };
 
-  const handleSubmit = () => {
-    if (disabled) {
+  const handleSubmit = async (): Promise<void> => {
+    if (disabled || onSubmit === undefined) {
       return;
     }
 
-    onSubmit();
+    await onSubmit();
   };
 
   const handleSecondaryAction = () => {
@@ -115,6 +115,7 @@ const Modal = ({
               {/*body*/}
               <div className="relative flex-auto p-6">{body}</div>
               {/*footer*/}
+
               <div className="flex flex-col gap-2 p-6">
                 <div className="flex flex-row items-center w-full gap-4 ">
                   {secondaryAction && secondaryActionLabel && (

@@ -12,6 +12,16 @@ yarn dev
 pnpm dev
 ```
 
+## pnpm update
+
+```
+Command	Meaning
+pnpm up	Updates all dependencies, adhering to ranges specified in package.json
+pnpm up --latest	Updates all dependencies, ignoring ranges specified in package.json
+pnpm up foo@2	Updates foo to the latest version on v2
+pnpm up "@babel/*"	Updates all dependencies under the @babel scope
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

@@ -12,7 +12,7 @@ type TFavorites = {
 const Favorites = ({ listings, currentUser }: TFavorites) => {
   return (
     <Container>
-      <Heading title="Favorites" subtitle="List of places you favorited!" />
+      <Heading title="Favorites" subtitle="List of favorite locations!" />
       <div className="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {listings.map((listing) => (
           <ListingCard
