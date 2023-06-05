@@ -77,7 +77,7 @@ export async function POST(request: Request) {
       },
       {
         role: "assistant",
-        content: postContent || "",
+        content: postContent ?? "",
       },
       {
         role: "user",
@@ -120,9 +120,9 @@ export async function POST(request: Request) {
 
   const blogPost = await prisma.blogPost.create({
     data: {
-      postContent: postContent || "",
-      title: title || "",
-      metaDescription: metaDescription || "",
+      postContent: postContent ?? "",
+      title: title ?? "",
+      metaDescription: metaDescription ?? "",
       topic,
       keywords,
       userId: currentUser.id,
